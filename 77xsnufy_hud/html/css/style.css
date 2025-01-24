@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;700&family=Signika:wght@500&display=swap');
+
+:root {
+    --zenix_background_1: rgba(39, 39, 39, 0);
+    --zenix_background_2: rgb(39, 39, 39);
+    --zenix_black: rgb(0, 0, 0);
+    --zenix_white: rgb(255, 255, 255);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+    overflow: hidden;
+    margin: 0;
+    color: var(--zenix_white);
+}
+
+.xsnufy_hud_all_container {
+    position: absolute;
+    display: flex;
+    bottom: 2.3%;
+    right: 43%;
+}
+
+.xsnufy_hud_container {
+    position: relative;
+    bottom: 3%;
+    right: 1%;
+    border-radius: 12px;
+    transform: translateX(0%, -50%);
+}
+
+.xsnufy_hud_wrapper {
+    display: flex;
+    padding: 0 0.5vh;
+}
+
+
+/* Zaokrąglone heksagony */
+.xsnufy_hud_item_1,
+.xsnufy_hud_item_2,
+.xsnufy_hud_item_3,
+.xsnufy_hud_item_4,
+.xsnufy_hud_item_5,
+.xsnufy_hud_item_6,
+.xsnufy_hud_item_7 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.7vh 0.5vh;
+    width: 5vh;
+    height: 5vh;
+    background-color: #585858;
+    -webkit-mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0c4.1 0 8.3 1.2 11.5 3.5l31.8 18.4c3.5 2 5.7 5.7 5.7 9.7v36.8c0 4-2.2 7.7-5.7 9.7l-31.8 18.4c-3.5 2-7.7 3.5-11.5 3.5s-8.3-1.2-11.5-3.5L6.7 78.1c-3.5-2-5.7-5.7-5.7-9.7V31.6c0-4 2.2-7.7 5.7-9.7L38.5 3.5C41.7 1.2 45.9 0 50 0z" fill="white"/></svg>');
+    -webkit-mask-size: 100%;
+    mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0c4.1 0 8.3 1.2 11.5 3.5l31.8 18.4c3.5 2 5.7 5.7 5.7 9.7v36.8c0 4-2.2 7.7-5.7 9.7l-31.8 18.4c-3.5 2-7.7 3.5-11.5 3.5s-8.3-1.2-11.5-3.5L6.7 78.1c-3.5-2-5.7-5.7-5.7-9.7V31.6c0-4 2.2-7.7 5.7-9.7L38.5 3.5C41.7 1.2 45.9 0 50 0z" fill="white"/></svg>');
+    mask-size: 100%;
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 0.2vh 0.5vh rgba(0, 0, 0, 0.5);
+}
+
+.xsnufy_hud_item_1 i,
+.xsnufy_hud_item_2 i,
+.xsnufy_hud_item_3 i,
+.xsnufy_hud_item_4 i,
+.xsnufy_hud_item_5 i,
+.xsnufy_hud_item_6 i,
+.xsnufy_hud_item_7 i {
+    z-index: 100;
+    font-size: 2vh;
+    color: inherit; /* Ikona odziedziczy kolor z rodzica */
+}
+
+
+/* Efekt hover dla heksagonów */
+.xsnufy_hud_item_1:hover,
+.xsnufy_hud_item_2:hover,
+.xsnufy_hud_item_3:hover,
+.xsnufy_hud_item_4:hover,
+.xsnufy_hud_item_5:hover,
+.xsnufy_hud_item_6:hover, 
+.xsnufy_hud_item_7:hover {
+    transform: scale(1.1);
+    background: linear-gradient(145deg, #3a3a3a, #565656);
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.7), inset 0 0 0.3vh 0.3vh rgba(255, 255, 255, 0.2);
+}
+
+/* Heksagonalne tło */
+.xsnufy_bg {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #252525;
+    border: #252525 solid 2px;
+    -webkit-mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0c4.1 0 8.3 1.2 11.5 3.5l31.8 18.4c3.5 2 5.7 5.7 5.7 9.7v36.8c0 4-2.2 7.7-5.7 9.7l-31.8 18.4c-3.5 2-7.7 3.5-11.5 3.5s-8.3-1.2-11.5-3.5L6.7 78.1c-3.5-2-5.7-5.7-5.7-9.7V31.6c0-4 2.2-7.7 5.7-9.7L38.5 3.5C41.7 1.2 45.9 0 50 0z" fill="white"/></svg>');
+    -webkit-mask-size: 100%;
+    mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0c4.1 0 8.3 1.2 11.5 3.5l31.8 18.4c3.5 2 5.7 5.7 5.7 9.7v36.8c0 4-2.2 7.7-5.7 9.7l-31.8 18.4c-3.5 2-7.7 3.5-11.5 3.5s-8.3-1.2-11.5-3.5L6.7 78.1c-3.5-2-5.7-5.7-5.7-9.7V31.6c0-4 2.2-7.7 5.7-9.7L38.5 3.5C41.7 1.2 45.9 0 50 0z" fill="white"/></svg>');
+    mask-size: 100%;
+}
+
+.xsnufy_hud_item_1 i {
+    color: #ff4d4d; /* Czerwony */
+    text-shadow: 0 0 0.2vh rgba(255, 77, 77, 0.7); /* Poświata */
+    font-size: 1.1rem;
+
+}
+
+.xsnufy_hud_item_2 i {
+    color: #cecece; /* Zielony */
+    text-shadow: 0 0 0.2vh #cecece; /* Poświata */
+    font-size: 1.1rem;
+
+}
+
+.xsnufy_hud_item_3 i {
+    color: #3da0e2; /* Zielony */
+    text-shadow: 0 0 0.2vh #3da0e2; /* Poświata */
+    font-size: 1.1rem;
+
+}
+
+.xsnufy_hud_item_4 i {
+    color: #4dff4d; /* Zielony */
+    text-shadow: 0 0 0.2vh rgba(19, 150, 58, 0.7); /* Poświata */
+    font-size: 1.1rem;
+
+}
+
+.xsnufy_hud_item_5 i {
+    color: #fa8f2b; /* Różowy */
+    text-shadow: 0 0 0.1vh #fa8f2b; /* Poświata */
+    font-size: 1.1rem;
+}
+
+.xsnufy_hud_item_6 i {
+    color: #d0ff4d; /* Różowy */
+    text-shadow: 0 0 0.2vh #d0ff4d; /* Poświata */
+    font-size: 1.1rem;
+}
+
+.xsnufy_hud_item_7 i {
+    color: #6716ff; /* Różowy */
+    text-shadow: 0 0 0.2vh #6716ff; /* Poświata */
+    font-size: 1.1rem;
+}
+
+
+/* Kolory dla wskaźników */
+#health {
+    transition: transform 0.3s ease-in-out;
+    background: conic-gradient(
+        #fa0000 0deg,
+        #fa0000 var(--rotation, 0deg),
+        rgba(0, 0, 0, 0.1) var(--rotation, 0deg)
+        
+    );
+}
+
+#thirst {
+    background: conic-gradient(
+        #63b1ff 0deg,
+        #63b1ff var(--rotation, 0deg),
+        rgba(0, 0, 0, 0.1) var(--rotation, 0deg)
+    );
+}
+
+#hunger {
+    background: conic-gradient(
+        #16be49 0deg,
+        #16be49 var(--rotation, 0deg),
+        rgba(0, 0, 0, 0.1) var(--rotation, 0deg)
+    );
+}
+
+#armour {
+    background: conic-gradient(
+        #cecece 0deg,
+        #cecece var(--rotation, 0deg),
+        rgba(0, 0, 0, 0.1) var(--rotation, 0deg)
+    );
+}
+
+#voice {
+    background: conic-gradient(
+        #ffa34e 0deg,
+        #ffa34e var(--rotation, 0deg),
+        rgba(0, 0, 0, 0.1) var(--rotation, 0deg)
+    );
+}
+
+#stamina {
+    background: conic-gradient(
+        #6716ff 0deg,
+        #6716ff var(--rotation, 0deg),
+        rgba(0, 0, 0, 0.1) var(--rotation, 0deg)
+    );
+}
+
+#lung {
+    background: conic-gradient(
+        #d0ff4d 0deg,
+        #d0ff4d var(--rotation, 0deg),
+        rgba(0, 0, 0, 0.1) var(--rotation, 0deg)
+    );
+}
+
+#fuel {
+    --rotation: 0deg; /* Domyślna wartość */
+    transform: rotate(var(--rotation)); /* Obrót wskaźnika */
+    transition: transform 0.2s ease-in-out; /* Płynna animacja */
+}
+
+
+/* Wspólne właściwości dla wskaźników */
+.xsnufy_fill, #health, #thirst, #hunger, #armour, #voice, #lung, #stamina, #fuel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0c4.1 0 8.3 1.2 11.5 3.5l31.8 18.4c3.5 2 5.7 5.7 5.7 9.7v36.8c0 4-2.2 7.7-5.7 9.7l-31.8 18.4c-3.5 2-7.7 3.5-11.5 3.5s-8.3-1.2-11.5-3.5L6.7 78.1c-3.5-2-5.7-5.7-5.7-9.7V31.6c0-4 2.2-7.7 5.7-9.7L38.5 3.5C41.7 1.2 45.9 0 50 0z" fill="white"/></svg>');
+    -webkit-mask-size: 100%;
+    mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0c4.1 0 8.3 1.2 11.5 3.5l31.8 18.4c3.5 2 5.7 5.7 5.7 9.7v36.8c0 4-2.2 7.7-5.7 9.7l-31.8 18.4c-3.5 2-7.7 3.5-11.5 3.5s-8.3-1.2-11.5-3.5L6.7 78.1c-3.5-2-5.7-5.7-5.7-9.7V31.6c0-4 2.2-7.7 5.7-9.7L38.5 3.5C41.7 1.2 45.9 0 50 0z" fill="white"/></svg>');
+    mask-size: 100%;
+    transition: --rotation 1s ease-in-out, background 0.5s ease-in-out; /* Płynna animacja */
+
+    transform-origin: center;
+}
+
+
+/* Wskaźnik samochodowy */
+.xsnufy_carhud_container {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    line-height: 45px;
+    min-width: 100px;
+    bottom: 18%;
+    height: 50px;
+    left: 9.95%;
+    font-weight: 600;
+    font-size: 15px;
+    transform: translate(-50%);
+}
+
+.xsnufy_carhud_street_box {
+    top: 100px;
+    height: 90%;
+    left: 50%;
+    margin-left: 6px;
+    border-radius: 12px 12px 0 0; /* Zaokrąglone tylko górne rogi */
+    padding: 0 20px;
+    background-color: #242424;
+    box-shadow: inset 0 0 0.5rem 0.5rem #312f2f;
+}
+
+
+.xsnufy_carhud_temp_box {
+    height: 90%;
+    margin-left: 581%;
+    font-size: 110px;
+    position: absolute; /* Ustaw stałą pozycję */
+    top: 365%; /* Wyśrodkowanie w pionie */
+    left: -55%; /* Wyśrodkowanie w poziomie */
+    transform: translate(-50%, -50%); /* Centrowanie na ekranie */
+    color: white; /* Kolor licznika */
+    font-weight: bold; /* Pogrubienie dla czytelności */
+    text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+.xsnufy_carhud_temp_box::before {
+    content: "KM/h"; /* Tekst po prawej stronie licznika */
+    position: absolute;
+    top: -5px;
+    right: -110px; /* Stała pozycja względem licznika */
+    font-size: 40px;
+    color: rgb(207, 207, 207); /* Szary kolor dla jednostki */
+    font-weight: bold;
+    line-height: 105px; /* Wyrównanie tekstu z licznikiem */
+}
+
+.hexagon {
+    position: relative;
+    width: 50px; /* Rozmiar heksagonu */
+    height: 50px;
+    background: linear-gradient(0deg, #00ff2a 100%, transparent 100%); /* Domyślne wypełnienie */
+    -webkit-mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0c4.1 0 8.3 1.2 11.5 3.5l31.8 18.4c3.5 2 5.7 5.7 5.7 9.7v36.8c0 4-2.2 7.7-5.7 9.7l-31.8 18.4c-3.5 2-7.7 3.5-11.5 3.5s-8.3-1.2-11.5-3.5L6.7 78.1c-3.5-2-5.7-5.7-5.7-9.7V31.6c0-4 2.2-7.7 5.7-9.7L38.5 3.5C41.7 1.2 45.9 0 50 0z" fill="white"/></svg>');
+    -webkit-mask-size: 100%;
+    mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0c4.1 0 8.3 1.2 11.5 3.5l31.8 18.4c3.5 2 5.7 5.7 5.7 9.7v36.8c0 4-2.2 7.7-5.7 9.7l-31.8 18.4c-3.5 2-7.7 3.5-11.5 3.5s-8.3-1.2-11.5-3.5L6.7 78.1c-3.5-2-5.7-5.7-5.7-9.7V31.6c0-4 2.2-7.7 5.7-9.7L38.5 3.5C41.7 1.2 45.9 0 50 0z" fill="white"/></svg>');
+    mask-size: 100%;
+    display: flex;
+    right: -3020%;
+    top: 270%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: background 0.2s ease-in-out; /* Płynna animacja wypełnienia */
+}
+
+.hexagon span {
+    position: absolute;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+}
+
+
+.hexagon-inner {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    background-color: #2e2e2e; /* Kolor tła wewnętrznego */
+    -webkit-mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0c4.1 0 8.3 1.2 11.5 3.5l31.8 18.4c3.5 2 5.7 5.7 5.7 9.7v36.8c0 4-2.2 7.7-5.7 9.7l-31.8 18.4c-3.5 2-7.7 3.5-11.5 3.5s-8.3-1.2-11.5-3.5L6.7 78.1c-3.5-2-5.7-5.7-5.7-9.7V31.6c0-4 2.2-7.7 5.7-9.7L38.5 3.5C41.7 1.2 45.9 0 50 0z" fill="white"/></svg>');
+    -webkit-mask-size: 100%;
+    mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0c4.1 0 8.3 1.2 11.5 3.5l31.8 18.4c3.5 2 5.7 5.7 5.7 9.7v36.8c0 4-2.2 7.7-5.7 9.7l-31.8 18.4c-3.5 2-7.7 3.5-11.5 3.5s-8.3-1.2-11.5-3.5L6.7 78.1c-3.5-2-5.7-5.7-5.7-9.7V31.6c0-4 2.2-7.7 5.7-9.7L38.5 3.5C41.7 1.2 45.9 0 50 0z" fill="white"/></svg>');
+    mask-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hexagon-inner i {
+    font-size: 15px; /* Rozmiar ikony */
+    color: #ffcc00; /* Kolor ikony */
+}
+
+
+.xsnufy_carhud_street_box {
+    min-width: 230px;
+}
+
+.xsnufy_carhud_temp_box {
+    min-width: 90px;
+}
+
+.xsnufy_carhud_icon_box {
+    width: 45px;
+    height: 45px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -55px;
+}
+
+.xsnufy_carhud_icon {
+    position: relative;
+    width: 90%;
+    height: 80%;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.xsnufy_hud_item_5.active #voice {
+    background: conic-gradient(
+        #ffc400 0deg,
+        #ffc400 var(--rotation, 0deg),
+        rgba(0, 0, 0, 0.1) var(--rotation, 0deg)
+    );
+    }
