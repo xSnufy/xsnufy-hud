@@ -35,7 +35,8 @@ Masz propozycje ulepszeń lub pytania? Skontaktuj się z nami:
 ## preview 
 Sprawdź, jak wygląda w akcji: 
 
-https://media.discordapp.net/attachments/1209266767285981205/1332488752551034944/0124_1.gif?ex=6795705b&is=67941edb&hm=18d6ec3975b0915f41d1c54d6af56ba958a4ab26b838308570406586c0df3ac8&=&width=380&height=676
+![Klip z oficjalnego 5city](https://media.discordapp.net/attachments/1209266767285981205/1332488752551034944/0124_1.gif?ex=6795705b&is=67941edb&hm=18d6ec3975b0915f41d1c54d6af56ba958a4ab26b838308570406586c0df3ac8&=&width=380&height=676)
+
 
 
 ---
