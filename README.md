@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/26358919-0ee0-46cd-adb1-ab2603dde8c4)# 5city 4.0 Hud [ESX] [FIVEM]
+# xSnufy 77 Hud [ESX] [FIVEM]
 
 ## Wprowadzenie
 77RP HUD inspirowany Polskim serwerem 77RP z najnowszej edycji! Nie jest on perfekcyjny, ale będzie regularnie aktualizowany, aby dostarczyć najlepsze wrażenia z gry.
